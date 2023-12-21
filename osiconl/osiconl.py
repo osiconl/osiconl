@@ -15,23 +15,22 @@ class State(rx.State):
 def index() -> rx.Component:
     return rx.fragment(
         rx.box(
-            rx.color_mode_button(rx.color_mode_icon(), float="right", color="dark"),
+            rx.color_mode_button(rx.color_mode_icon(), float="right", color="dark",),
             rx.box(
                 spacing="1.5em",
                 font_size="2em",
                 padding_top="100%",
                 ),
-            background_image="Gerard-Koster-Koolzaad-2012-93kb.jpg",
+            background_image="Gerard-Koster-Koolzaad-2012-98kb.jpg",
             background_position="center",
             background_size="cover",
-            background_repeat="no-repeat",
-            ),
+            background_repeat="no-repeat"),
         rx.box(
             rx.heading("OSICO"),
             rx.text("Nanne Osinga"),
             class_name="sticky bottom-0", padding="1em"),
         rx.box(
-            rx.text("ZOVER HET OOG REIKT", font_weight="bold"),
+            rx.text("ZOVER HET OOG REIKT ...", font_weight="bold"),
             rx.html("<br/>"),
             rx.text("Landschapsschilder Gerard Koster"),
             rx.html("<br/>"),
@@ -43,23 +42,29 @@ def index() -> rx.Component:
             rx.html("<br/>"),
             rx.text("“Met clean software, zie je meer, kom je verder, beleef je meer”"),
             rx.html("<br/>"),
-            rx.text("Hieronder vind je meer info"),
             padding="1em"
             ),
         rx.divider(
             orientation="horizontal", border_color="black"
         ),
-        rx.box(
-            rx.text("Footer"),
-            padding="1em",
-            bg="rgba(247, 247, 250, 0.6);",
-            ),
-        padding="1.5em",
-        bg="rgba(247, 247, 250, 0.6);",
+        rx.vstack(
+            rx.hstack(
+                rx.link(rx.button(rx.image(src="linkedin-icon-2.svg", height="1.75em")),
+                        href="https://www.linkedin.com/in/nanneosinga/"),
+                rx.link(rx.button(rx.image(src="whatsapp.png", height="1.75em")),
+                        href="https://wa.me/31653362179"),
+                rx.link(rx.button(rx.icon(tag="email",),),
+                        href="mailto:nanne@osico.nl"),
+                rx.spacer(),
+                rx.color_mode_button(rx.color_mode_icon(), float="right", color="dark",)
+                ,width="100%",),
+                padding="1em",
+                bg="rgba(247, 247, 250, 0.6);",
+        ),
     )
 
 
 # Add state and page to the app.
 app = rx.App()
-app.add_page(index)
+app.add_page(index, title="Osico")
 app.compile()
