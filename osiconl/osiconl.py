@@ -32,10 +32,17 @@ def index() -> rx.Component:
             background_position="center",
             background_size="cover",
             background_repeat="no-repeat"),
-        rx.box(
-            rx.heading("OSICO"),
-            rx.text("Nanne Osinga"),
-            class_name="sticky bottom-0", padding="1em"),
+        rx.hstack(
+            rx.box(
+                rx.heading("OSICO"),
+                rx.text("Nanne Osinga"),
+                ),
+            rx.spacer(),
+            rx.link(rx.box(
+                rx.icon(
+                    tag="arrow_down",
+                ),),href="/#footer"),
+            class_name="sticky bottom-0", padding="1em", width="100%", ),
         rx.box(
             rx.text("ZOVER HET OOG REIKT ...", font_weight="bold"),
             rx.html("<br/>"),
@@ -90,6 +97,7 @@ def index() -> rx.Component:
                 ,width="100%",),
                 padding="1em",
                 bg="rgba(247, 247, 250, 0.6);",
+                id="footer",
         ),
     )
 
