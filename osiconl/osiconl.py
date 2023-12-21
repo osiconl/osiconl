@@ -12,6 +12,13 @@ class State(rx.State):
     pass
 
 
+class AlertDialogState(rx.State):
+    show: bool = False
+
+    def change(self):
+        self.show = not (self.show)
+
+
 def index() -> rx.Component:
     return rx.fragment(
         rx.box(
@@ -50,9 +57,32 @@ def index() -> rx.Component:
         rx.vstack(
             rx.hstack(
                 rx.link(rx.button(rx.image(src="linkedin-icon-2.svg", height="1.75em")),
-                        href="https://www.linkedin.com/in/nanneosinga/"),
+                        href="https://www.linkedin.com/in/nanneosinga/",
+                        is_external=True),
                 rx.link(rx.button(rx.image(src="whatsapp.png", height="1.75em")),
-                        href="https://wa.me/31653362179"),
+                        href="https://wa.me/31653362179",
+                        is_external=True),
+                rx.button(
+                    rx.icon(tag="phone",),
+                    on_click=AlertDialogState.change,
+                ),
+                rx.alert_dialog(
+                    rx.alert_dialog_overlay(
+                        rx.alert_dialog_content(
+                            rx.alert_dialog_header("Bellen"),
+                            rx.alert_dialog_body(
+                                "+31 (0) 6 5336 2179"
+                            ),
+                            rx.alert_dialog_footer(
+                                rx.button(
+                                    "Sluiten",
+                                    on_click=AlertDialogState.change,
+                                )
+                            ),
+                        )
+                    ),
+                    is_open=AlertDialogState.show,
+                ),
                 rx.link(rx.button(rx.icon(tag="email",),),
                         href="mailto:nanne@osico.nl"),
                 rx.spacer(),
