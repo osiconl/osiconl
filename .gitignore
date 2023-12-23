@@ -7,10 +7,10 @@
 *.py[cod]
 *.zip
 .idea
+.osiconl/
 .venv/
 .web
 __pycache__/
 pcconfig2.py
 pynecone.db
 reflex.db
-.osiconl/

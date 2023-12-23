@@ -41,7 +41,7 @@ def index() -> rx.Component:
             rx.link(rx.box(
                 rx.icon(
                     tag="arrow_down",
-                ),),href="/#footer"),
+                ),),href="/#contact"),
             class_name="sticky bottom-0", padding="1em", width="100%", ),
         rx.box(
             rx.text("ZOVER HET OOG REIKT ...", font_weight="bold"),
@@ -97,7 +97,7 @@ def index() -> rx.Component:
                 ,width="100%",),
                 padding="1em",
                 bg="rgba(247, 247, 250, 0.6);",
-                id="footer",
+                id="contact",
         ),
     )
 
