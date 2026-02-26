@@ -3,7 +3,6 @@ from rxconfig import config
 import reflex as rx
 from osiconl.translations import TRANSLATIONS
 
-
 class State(rx.State):
     """The app state."""
 

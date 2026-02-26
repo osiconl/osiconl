@@ -1,3 +1,2 @@
 reflex
-gunicorn
-uvicorn
+python-dotenv

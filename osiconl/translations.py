@@ -7,7 +7,7 @@ TRANSLATIONS = {
         "painter_said": "Once, in 2012, he said",
         "painter_quote": "\u201cThe emptier the landscape, the more I see, the more I experience\u201d",
         "translated": "Translated to our world",
-        "software_quote": "\u201cWith clean software, you see more, come further, experience more\u201d",
+        "software_quote": "\u201cWith clean software, you see more, reach further, experience more\u201d",
         "call": "Call",
         "close": "Close",
         "switch_lang": "NL",
