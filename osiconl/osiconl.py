@@ -50,9 +50,9 @@ def sticky_top_bar(lang: str) -> rx.Component:
             ),
             href=other_lang_url,
         ),
-        rx.color_mode.button(position="top-right"),
+        rx.color_mode.button(),
         spacing="2",
-        align="center",
+        align_items="center",
         position="fixed",
         top="1em",
         right="1em",
@@ -154,6 +154,11 @@ def page_content(lang: str) -> rx.Component:
                 rx.link(
                     rx.button(rx.icon(tag="mail"), variant="ghost"),
                     href="mailto:nanne@osico.nl",
+                ),
+                rx.link(
+                    rx.button(rx.icon(tag="notebook-pen"), variant="ghost"),
+                    href="https://blog.osico.nl",
+                    is_external=True,
                 ),
                 width="100%",
             ),
